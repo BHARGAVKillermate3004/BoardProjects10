@@ -1,0 +1,80 @@
+import java.util.Scanner;
+public class Banking
+{
+  void GenerateMenu()//to generate options to do action
+{
+    System.out.println("What would you like to do?");
+    System.out.println("to calculate term deposit-1");
+    System.out.println("to calculate recurring deposit-2");
+    System.out.println("press any integer other than 1/2 to exit");
+}
+void calc_term_deposit()//to calculate term deposit /option1
+{
+    Scanner sc=new Scanner(System.in);
+    double P;//principal
+    System.out.println("Enter the value of the Principal:");
+    P=sc.nextDouble();
+    double r;//rate of interest
+    System.out.println("Enter the value of the rate of interest:");
+    r=sc.nextDouble();
+    double n;//time period in years
+    System.out.println("Enter the value of the time in years:");
+    n=sc.nextDouble();
+    double A=P*Math.pow((1+(r/100)),n);//maturity value
+    System.out.println("The maturity value is "+A);
+}
+void calc_recurring_deposit()//to calculate recurring deposit /option2
+{
+    Scanner sc=new Scanner(System.in);
+    double P;//principal
+    System.out.println("Enter the value of the Principal:");
+    P=sc.nextDouble();
+    double r;//rate of interest
+    System.out.println("Enter the value of the rate of interest:");
+    r=sc.nextDouble();
+    double n;//time period in months
+    System.out.println("Enter the value of the time in months:");
+    n=sc.nextDouble();
+    double A=n*P+(P*r*(n)*(n+1))/(100*2*12);//maturity value
+    System.out.println("The maturity value is "+A);
+}
+public static void main()
+{
+    Banking obj=new Banking();
+    Scanner sc1=new Scanner(System.in);
+    int choice;
+    int option;
+    do
+    {
+        obj.GenerateMenu();
+        System.out.println("Ënter your choice [1/2]");
+        option=sc1.nextInt();
+        switch(option)//using switch
+        {
+            case 1:
+                   obj.calc_term_deposit();
+                   break;
+            case 2:
+                   obj.calc_recurring_deposit();
+                   break;
+            default:
+                    System.out.println("The entered character is invalid.");
+                    break;
+        }
+        System.out.println("Would you like to continue [1 for yes/2 for no] "); 
+        choice=sc1.nextInt();
+    }while(choice==1);
+}
+}
+/*Using the switch statement. Write a menu driven program to calculate the maturity amount of a Bank Deposit.
+  The user is given the following options:
+  (1) Term Deposit
+  (2) Recurring Deposit
+  For option (i) accept principal(P), rare of interest(r) and time period in years(n). Calculate    
+  and output the maturity amount(A) receivable using the formula
+  A=P*([1+(R/100)]^n)
+  For option (ii) accept Monthly Installment (P), rate of interest(r) and time period in months
+  (n). Calculate and output the maturity amount (A) receivable using the formula
+  A=nP+ I
+  I=(PR*n*(n+1))/100*2*12
+  For an incorrect option, an appropriate error message should be displayed.*/
