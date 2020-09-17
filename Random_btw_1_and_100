@@ -1,0 +1,33 @@
+public class Random_btw_1_and_100
+{
+  void random1()// method to get random numbers
+    {
+        double x=Math.random()*100;//to get random numbers
+        int y=(int)Math.ceil(x);//to have the numbers non decimal
+        System.out.println(y);
+    }
+    public static void main(String args[])//main method for object creation
+    {
+        Random_btw_1_and_100 obj=new Random_btw_1_and_100();//object creation
+        obj.random1();//to print 20 random numbers
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+        obj.random1();
+    }
+}//3.	Write a program to generate 20 unique random numbers within range of 1 to 100
