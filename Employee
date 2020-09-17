@@ -1,0 +1,37 @@
+public class Employee
+{
+    String employeename;
+    float employeesalary,HRA,totalsalary;//instance variables
+    Employee()
+    {
+        employeename="";
+        employeesalary=0;
+        HRA=0;
+        totalsalary=0;
+    }
+    String name_of_emp(String name1)//method for inputing employee name
+    {
+        employeename=name1;
+        return employeename;
+    }
+     float sal_employee(float salary)//method for inputing employee salary
+    {
+        employeesalary=salary;
+        HRA=(50*employeesalary)/100;
+        totalsalary=HRA+employeesalary;
+        return totalsalary;
+    }
+     public static void main()//class for object creation
+    {
+        Employee obj=new Employee();//creating an object
+        String name_emp=obj.name_of_emp("Bhargav");  
+        float salary=obj.sal_employee(5000);
+        System.out.println("The name of the employee is "+name_emp);
+        System.out.println("The total salary of the employee="+salary);
+    }
+}
+/*2.	Write a program with an “Employee” class having two variables one for the name of employee (String) and other for base salary (float).
+Create a function that calculates the total salary by adding 50% HRA to the salary and returns.
+Create an object of this class in main function and set the name of the employee, call the salary function and print the calculated salary
+returned by the function with name of the employee.*/
+
