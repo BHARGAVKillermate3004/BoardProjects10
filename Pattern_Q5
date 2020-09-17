@@ -1,0 +1,60 @@
+import java.util.Scanner;
+public class Pattern_Q5
+{
+   int n;//for number of rows
+   int a;//for choice
+   Pattern_Q5()
+   {
+       n=0;
+       a=0;
+    }
+   void input()//for insersion of number of rows and choice of pattern 
+   {
+       Scanner sc=new Scanner(System.in);
+       System.out.println("Ënter the number of rows:");
+       n=sc.nextInt();
+       System.out.println("Ënter the number choice:");
+       a=sc.nextInt();
+    }
+   void generatepattern()
+   {
+       switch (a)
+        {
+            case 1://pattern of numbers
+            for(int l=1;l<=n;l++)
+            {
+                for(int k=1; k<=l; k++)
+                {
+                    System.out.print(k+" ");
+                }
+                System.out.println();
+            }
+            break;
+            case 2://pattern of alphabets
+            for(int l=n; l>=0; l--)
+            {
+                int A= 97;
+                for(int k=1;k<=l;k++)
+                {
+                    System.out.print((char)(A+k) +" ");
+                }
+                System.out.println();
+            }
+            break;
+            default:
+            System.out.println("Enter a valid integer [1/2]");
+        }
+    }
+   public static void main()//calling methods through objects
+    {
+        Pattern_Q5 obj=new Pattern_Q5();
+        obj.input();
+        obj.generatepattern();
+    }
+}         /*	Write a program to generate the patterns till n terms based upon the user’s choice of triangle to be displayed.                                             
+
+ 1                                                 a b c d e
+ 1 2                                               a b c d
+ 1 2 3                                             a b c
+ 1 2 3 4                                           a b
+ 1 2 3 4 5				           a 	*/
