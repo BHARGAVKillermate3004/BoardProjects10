@@ -31,5 +31,10 @@ import java.util.Scanner;
         obj.input();
         obj.generate_pattern();
     }
-}
+}//1.	Write a program in Java to print Floyd’s right angled triangle using the natural numbers.
+      1
+      2 3
+      4 5 6
+      7 8 9 10
+
     
