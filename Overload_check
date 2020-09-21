@@ -1,0 +1,69 @@
+class Overload_check//question 8
+{
+    void check(String str,char ch)//overloaded method 1- to find and print the frequency of a character in a string.
+    {
+        int count;//to count frequency
+        count=0;
+        int len;//to calculate the length of the string
+        len=str.length();
+        char ch1;
+        for(int i=0;i<=len-1;i++)//i represents the current index position
+        {
+            ch1=str.charAt(i);
+            if((ch1==ch)||(ch1==Character.toUpperCase(ch)))
+            {
+                count++;
+            }
+        }
+        System.out.println("the frequency of character is:"+count);
+    }
+     void check(String s1)//overloaded method 2-to display only vowels from string s1,after converting it to lower case 
+    {
+         char ch1;//for comparison purpose
+         int len;//to calculate the length of the string;
+         len=s1.length();
+         for(int i=0;i<=len-1;i++)
+         {
+             ch1=s1.charAt(i);
+             if((ch1=='A')||(ch1=='a'))
+             {
+                System.out.print(Character.toLowerCase(ch1)+" ");
+                }
+             else  if((ch1=='E')||(ch1=='e'))
+             {
+                 System.out.print(Character.toLowerCase(ch1)+" ");
+                }
+             else if((ch1=='I')||(ch1=='i'))
+             {
+                 System.out.print(Character.toLowerCase(ch1)+" ");
+                }
+             else if((ch1=='O')||(ch1=='o'))
+             {
+                 System.out.print(Character.toLowerCase(ch1)+" ");
+                }
+             else  if((ch1=='U')||(ch1=='u'))
+             {
+                 System.out.print(Character.toLowerCase(ch1)+" ");
+                }
+            }
+    }
+    public static void main()//caller method
+    {
+        Overload_check obj=new Overload_check();
+        obj.check("Success",'s');
+        obj.check("Computer");
+    }
+}
+/*
+ * 8.	Design a class to overload a function check( ) as follows:                        
+(i)	void check(String str, char ch)- to find and print the frequency of a character in a string.
+Example:
+Input:                                                 Output:
+str = ”success”                                   number of s present is = 3 
+ch = ‘s’
+
+(ii)	void check(String s1)- to display only vowels from string s1,after converting it to lower case.
+Example:
+Input:                                                  Output:
+s1 = “computer”                                  o u e   
+*/
