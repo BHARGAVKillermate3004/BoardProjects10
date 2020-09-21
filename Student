@@ -1,0 +1,55 @@
+import java.util.Scanner;
+class Student//Question 7
+{
+  int english,maths,science,sst,computer,roll_no,average;
+  String Name;
+  Student()//constructor for initialization
+  {
+      english=0;
+      maths=0;
+      science=0;
+      sst=0;
+      computer=0;
+      roll_no=0;
+      average=0;
+      Name="";
+    }
+    void input()//method for value assigning
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the value of your roll number:");
+        roll_no=sc.nextInt();
+        System.out.println("Enter your name:");
+        Name=sc.next();
+        System.out.println("Enter the value of marks in english out of 100:");
+        english=sc.nextInt();
+        System.out.println("Enter the value of marks in maths out of 100:");
+        maths=sc.nextInt();
+        System.out.println("Enter the value of marks in science out of 100:");
+        science=sc.nextInt();
+        System.out.println("Enter the value of marks in sst out of 100:");
+        sst=sc.nextInt();
+        System.out.println("Enter the value of marks in computer out of 100:");
+        computer=sc.nextInt();
+    }
+    void calc_average()//to calculate the average marks
+    {
+        average=(english+sst+maths+science+computer)/5;
+    }
+    void display_stream()//to display the stream of the person on criteria
+    {
+        
+    }
+}
+/* 7.	A class, namely Student, has three data members viz. Name. Roll No. and Marks of five subjects.
+ * The stream is assigned which is based on the following criteria:                                                                                       
+          Average Marks Stream
+
+         90% or above         Science with Computers
+         80% — 89%           Science without Computers
+         70% — 79%           Commerce with Maths
+         60% — 69%           Commerce without Maths
+
+Write a program to declare the class, ‘Student’, and define the method of allotment of subjects	
+
+*/
