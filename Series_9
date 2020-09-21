@@ -1,0 +1,52 @@
+import java.util.Scanner;
+class Series_9
+{
+   int x;
+   Series_9()
+    {
+       x=0; 
+    }
+   void Series_9a()
+    {
+        int sum=0;
+        for(int i=1;i<=10;i++)
+        {
+            if(i%2==1)
+            {
+               sum=sum+(2*i);
+            }
+            else if(i%2==0)
+            {
+                sum=sum-(2*i);
+            }
+        }
+        System.out.println("The sum of the series is"+sum);
+    }
+   void input()
+   {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the value of x:");
+        x=sc.nextInt();
+   }
+   void Series_9b()
+   {
+       int sum=0;
+       for(int i=2;i<=20;)
+       {
+           sum=sum+x/i;
+           i=i+3;
+        }
+        System.out.println("The sum of the series is "+sum);
+    }
+   public static void main()
+   {
+       Series_9 obj=new Series_9();
+       obj.Series_9a();
+       obj.input();
+       obj.Series_9b();
+    }
+}
+/*9.	Write a program to calculate and print the sum of each of the following series:
+(a)	Sum = 2-4+6-8+10……-20
+(b)	Sum = x/2 + x/5 + x/8 + x/11 + …..+ x/20   (x to be input by user) 
+*/  
