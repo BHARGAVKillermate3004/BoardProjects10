@@ -1,10 +1,10 @@
 import java.util.Scanner;
-class Student//Question 7
+public class Student
 {
-  int english,maths,science,sst,computer,roll_no,average;
-  String Name;
-  Student()//constructor for initialization
-  {
+    int english,maths,science,sst,computer,roll_no,average;
+    String Name;
+     Student()//constructor for initialization
+    {
       english=0;
       maths=0;
       science=0;
@@ -38,10 +38,36 @@ class Student//Question 7
     }
     void display_stream()//to display the stream of the person on criteria
     {
-        
+        if((average>=90)&&(average<=100))//90 and above
+        {
+            System.out.println("Ÿour course is Science with computers");
+        }
+        else if((average>=80)&&(average<=89))//80-89
+        {
+            System.out.println("Ÿour course is Science without computers");
+        }
+        else if((average>=70)&&(average<=79))//70-79
+        {
+            System.out.println("Ÿour course is Commerce with maths");
+        }
+        else if((average>=60)&&(average<=69))//60-69
+        {
+            System.out.println("Ÿour course is Commerce with maths");
+        }
+        else//under 60
+        {
+            System.out.println("No stream");
+        }
+    }  
+    public static void main()//caller method and object creator
+    {
+        Student obj=new Student();
+        obj.input();
+        obj.calc_average();
+        obj.display_stream();
     }
 }
-/* 7.	A class, namely Student, has three data members viz. Name. Roll No. and Marks of five subjects.
+/*7.	A class, namely Student, has three data members viz. Name. Roll No. and Marks of five subjects.
  * The stream is assigned which is based on the following criteria:                                                                                       
           Average Marks Stream
 
