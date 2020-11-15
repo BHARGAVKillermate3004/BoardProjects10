@@ -1,9 +1,9 @@
 // Java program to find the number of charters 
 // in the longest word in the sentence. 
 import java.util.*; 
-class LongestWordLength_6 
+class LongestWordLength 
 { 
-    static int LongestWordLength_6(String str) 
+    static int LongestWordLength(String str) 
     { 
     int n = str.length(); 
     int res = 0, curr_len = 0; 
