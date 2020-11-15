@@ -1,5 +1,5 @@
 import java.util.Scanner;
- class Floyd_triangle
+ class Floyd_triangle_1
 {
     int n;
     Floyd_triangle()//constructor
