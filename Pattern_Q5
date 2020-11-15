@@ -48,13 +48,20 @@ public class Pattern_Q5
    public static void main()//calling methods through objects
     {
         Pattern_Q5 obj=new Pattern_Q5();
+        int choice1;
+        Scanner sc1=new Scanner();
+        do
+        {
         obj.input();
         obj.generatepattern();
-    }
+        System.out.println("Would you like to continue ?");
+        System.out.println("If yes press 1, and press any other number to exit");
+        choice1=sc.nextInt();
+    }while(choice1==1)
 }         /*	Write a program to generate the patterns till n terms based upon the user’s choice of triangle to be displayed.                                             
 
  1                                                 a b c d e
  1 2                                               a b c d
  1 2 3                                             a b c
  1 2 3 4                                           a b
- 1 2 3 4 5				           a 	*/
+ 1 2 3 4 5				                              a 	*/
