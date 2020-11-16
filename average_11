@@ -1,0 +1,91 @@
+import java.util.Scanner;
+class average_11
+{
+    int n;//number of students
+    int[] rollno=new int[n];
+    String[] name=new String[n];
+    int[] subject1=new int[n];
+    int[] subject2=new int[n];
+    int[] subject3=new int[n];
+    average_11()
+    {
+       n=0;
+    }
+    void input_n()
+    {
+       Scanner sc=new Scanner(System.in);
+       System.out.println("Enter the number of students");
+       n=sc.nextInt();
+    }
+    void input_array()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the roll number, name and marks in the three subjects of all "+n+" students");
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter roll number");
+            rollno[i]=sc.nextInt();
+            System.out.println("Enter name");
+            name[i]=sc.next();
+            System.out.println("Enter subject 1 marks");
+            subject1[i]=sc.nextInt();
+            System.out.println("Enter subject 2 marks");
+            subject2[i]=sc.nextInt();
+            System.out.println("Enter subject 3 marks");
+            subject3[i]=sc.nextInt();
+        }
+    }
+    double average(int a,int b,int c)
+    {
+        int average1;
+        average1=(a+b+c)/3;
+        return average1;
+    }
+    void Remark()
+    {
+        String remark;
+         for(int k=0;k<n;k++)
+        {
+            if((average(subject1[k],subject2[k],subject3[k])<=100)&&(average(subject1[k],subject2[k],subject3[k])>=85))
+            {
+                remark="Excellent";
+            }
+            else if((average(subject1[k],subject2[k],subject3[k])<=84)&&(average(subject1[k],subject2[k],subject3[k])>=75))
+            {
+                remark="Distinction";
+            }
+            else if((average(subject1[k],subject2[k],subject3[k])<=74)&&(average(subject1[k],subject2[k],subject3[k])>=60))
+            {
+                remark="First Class";
+            }
+            else if((average(subject1[k],subject2[k],subject3[k])<=59)&&(average(subject1[k],subject2[k],subject3[k])>=40))
+            {
+                remark="pass";
+            }
+            else
+            {
+                remark="poor";
+            }
+            System.out.println("The remark of roll number "+rollno[k]+" named "+name[k]+" is"+remark);
+        }
+    }
+    public static void main()
+    {
+        average_11 obj= new average_11();
+        obj.input_n();
+        obj.input_array();
+        obj.Remark();
+    }
+}
+/*Write a program in to input and store all roll numbers,
+ names and marks in 3 subjects of n number of students 
+ in five single dimensional arrays and display the 
+ remark based on average marks as given below:
+          Average marks = total marks/3
+         AVERAGE MARKS                  	REMARK
+               85 – 100                 	EXCELLENT
+               75 – 84	                        DISTINCTION
+               60 – 74	                        FIRST CLASS
+              40 – 59                         	PASS
+           Less than 40                        	POOR
+   */
