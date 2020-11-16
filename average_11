@@ -67,7 +67,7 @@ class average_11
             {
                 remark="poor";
             }
-            System.out.println("The remark of roll number "+rollno[k]+" named "+name[k]+" is"+remark);
+            System.out.println("The remark of roll number "+rollno[k]+" named "+name[k]+" is "+remark);
         }
     }
     public static void main()
