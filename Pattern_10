@@ -1,0 +1,85 @@
+import java.util.Scanner;
+public class Pattern_10
+{
+   int n;
+   Pattern_10()
+   {
+       n=0;
+   }
+   void generate_menu()
+   {
+   System.out.println("What would you like to do?");
+   System.out.println("Press 1 to generate pattern 1 and 2 to generate pattern 2");
+   System.out.println("Press any other key to exit");
+   }
+   void input()
+   {
+       Scanner sc=new Scanner(System.in);
+       System.out.println("Enter the number of rows in the pattern");
+       n=sc.nextInt();
+   }
+   void generate_pattern1()
+   {
+       for(int i=1;i<=n;i++)//number of rows
+       {
+           System.out.print(i);
+           for(int j=1;j<=i;j++)
+           {
+               if(j%2==1)
+               {
+                   System.out.print("* ");
+                }
+                else if(j%2==0)
+                {
+                    System.out.print("# ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    void generate_pattern2()
+   {
+       for(int i=1;i<=n;i++)//number of rows
+     {
+         for(int j=n;j>=i;j--)
+         {
+             System.out.print(j+" ");
+            }
+         System.out.println();
+        }
+    }
+   public static void main()
+   {
+       Pattern_10 obj=new Pattern_10();
+       int choice;
+       int choice1;
+       Scanner sc1=new Scanner(System.in);
+       do
+       {
+       System.out.println("Enter your choice");
+       choice=sc1.nextInt();
+       if(choice==1)
+       {
+       obj.input();
+       obj.generate_pattern1();
+       }
+       else if(choice==2)
+       {
+       obj.input();
+       obj.generate_pattern2();
+       }
+       System.out.println("Would you like to continue?");
+       System.out.println("Press 1 to continue and any other key to exit");
+       choice1=sc1.nextInt();
+       }while(choice1==1);
+    }
+}
+/*
+ * 10.	Write  program to generate the following pattern using iteration(loop) statements:
+        1*
+        2* #
+	3* # *
+	4* # * #
+	5* # * # *
+
+ */
