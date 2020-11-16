@@ -2,20 +2,21 @@ import java.util.Scanner;
 class average_11
 {
     int n;//number of students
-    int[] rollno=new int[n];
-    String[] name=new String[n];
-    int[] subject1=new int[n];
-    int[] subject2=new int[n];
-    int[] subject3=new int[n];
+    int[] rollno;
+    String[] name;
+    int[] subject1;
+    int[] subject2;
+    int[] subject3;
     average_11()
-    {
-       n=0;
-    }
-    void input_n()
     {
        Scanner sc=new Scanner(System.in);
        System.out.println("Enter the number of students");
        n=sc.nextInt();
+       rollno=new int[n];
+       name=new String[n];
+       subject1=new int[n];
+       subject2=new int[n];
+       subject3=new int[n];
     }
     void input_array()
     {
@@ -72,7 +73,6 @@ class average_11
     public static void main()
     {
         average_11 obj= new average_11();
-        obj.input_n();
         obj.input_array();
         obj.Remark();
     }
