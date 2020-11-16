@@ -56,6 +56,7 @@ public class Pattern_10
        Scanner sc1=new Scanner(System.in);
        do
        {
+       obj.generate_menu();
        System.out.println("Enter your choice");
        choice=sc1.nextInt();
        if(choice==1)
