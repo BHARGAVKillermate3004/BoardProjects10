@@ -1,0 +1,47 @@
+import java.util.Scanner;
+class BubbleSort_12
+{
+  int[] numArray;
+  void init()
+  {
+      int[] num1Array=new int[20];
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter the 20 numbers to be sorted");
+      for(int k=0;k<=num1Array.length-1;k++)
+      {
+          num1Array[k]=sc.nextInt();
+        }
+      numArray=num1Array;
+   }
+  void sort()
+  {
+      int temp;
+      for (int i=0;i<19;i++)
+      {
+        for (int j=0;j<19-i;j++)
+         {
+           if (numArray[j]<numArray[j+1]) 
+            {
+              temp =numArray[j];
+              numArray[j]=numArray[j+1];
+              numArray[j+1]=temp;
+             }
+         }
+    }
+  }
+  void display()
+  {
+    System.out.println("Sorted list of integers:");
+    for (int l=0;l<20;l++)
+    {
+      System.out.println(numArray[l]);
+    }
+    }
+  public static void main()
+  {
+      BubbleSort_12 obj=new BubbleSort_12();
+      obj.init();
+      obj.sort();
+      obj.display();
+    }
+}// 12.	Write a program to input twenty numbers in an array. Arrange these in descending order of characters , using the bubble sort technique
