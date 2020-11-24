@@ -1,0 +1,42 @@
+import java.util.Scanner;
+class last_digit_3_15
+{
+    int[] array;
+    void init()
+    {
+        int[] array1=new int[8];
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the numbers:");
+        for(int i=0;i<8;i++)
+        {
+            array1[i]=sc.nextInt();
+        }
+        array=array1;
+    }
+    boolean lastdigit_3(int a)
+    {
+        boolean b;
+        if(a%10==3)
+        b=true;
+        else
+        b=false;
+        return b;
+    }
+    void print_num()
+    {
+        System.out.println("The numbers are:");
+        for(int j=0;j<8;j++)
+        {
+            if(lastdigit_3(array[j])==true)
+            {
+                System.out.println(array[j]);
+            }
+        }
+    }
+    public static void main()
+    {
+        last_digit_3_15 obj=new last_digit_3_15();
+        obj.init();
+        obj.print_num();
+    }
+}//15.	Write a program to create an array of type int and size 8 and fill it with variables. Print those elements which have last digit 3.
