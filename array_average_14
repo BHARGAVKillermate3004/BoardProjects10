@@ -1,0 +1,42 @@
+import java.util.Scanner;
+class array_average_14
+{
+   double[] array1;
+   void init()
+   {
+       double array2[]=new double[10];
+       Scanner sc=new Scanner(System.in);
+       System.out.println("Enter the 10 numbers:");
+       for(int i=0;i<10;i++)
+       {
+           array2[i]=sc.nextDouble();
+        }
+       array1=array2;
+    }
+   double average()
+   {
+       double sum=0,average;
+       for(int j=0;j<10;j++)
+       {
+           sum=sum+array1[j];
+        }
+       average=sum/10;
+       return average;
+    }
+   void printing()
+   {
+       for(int k=0;k<10;k++)
+       {
+           if(array1[k]>average())
+           {
+           System.out.println(array1[k]);
+           }
+        }
+    }
+   public static void main()
+   {
+       array_average_14 obj=new array_average_14();
+       obj.init();
+       obj.printing();
+    }
+}//14.	Fill an array of size 10 and type double. Print those elements of the array that are larger than the average of the elements of the array
