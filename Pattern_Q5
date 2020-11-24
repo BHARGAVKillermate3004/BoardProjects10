@@ -1,9 +1,9 @@
 import java.util.Scanner;
-public class Pattern_Q5
+class pattern_5
 {
    int n;//for number of rows
    int a;//for choice
-   Pattern_Q5()
+   pattern_5()
    {
        n=0;
        a=0;
@@ -11,17 +11,20 @@ public class Pattern_Q5
    void input()//for insersion of number of rows and choice of pattern 
    {
        Scanner sc=new Scanner(System.in);
-       System.out.println("Ënter the number of rows:");
-       n=sc.nextInt();
+       System.out.println("If you want to print first pattern then enter choice as 1");
+       System.out.println("If you want to print second pattern then enter choice as 2");
+       System.out.println("If neither of them, then press any other integer other than 1 or 2:");
        System.out.println("Ënter the number choice:");
        a=sc.nextInt();
+       System.out.println("Ënter the number of rows:");
+       n=sc.nextInt();
     }
    void generatepattern()
    {
        switch (a)
         {
             case 1://pattern of numbers
-            for(int l=1;l<=n;l++)
+            for(int l=1;l<=n;l++)//no. of rows
             {
                 for(int k=1; k<=l; k++)
                 {
@@ -30,15 +33,13 @@ public class Pattern_Q5
                 System.out.println();
             }
             break;
-            case 2://pattern of alphabets
-            for(int l=n; l>=0; l--)
+            case 2://pattern of 5
+            for(int j=1;j<=n;j++)//no. of rows
             {
-                int A= 97;
-                for(int k=1;k<=l;k++)
+                for(int i=n;i>=1;i--)
                 {
-                    System.out.print((char)(A+k) +" ");
+                System.out.print("5 ");
                 }
-                System.out.println();
             }
             break;
             default:
@@ -47,21 +48,25 @@ public class Pattern_Q5
     }
    public static void main()//calling methods through objects
     {
-        Pattern_Q5 obj=new Pattern_Q5();
+        pattern_5 obj=new pattern_5();
         int choice1;
-        Scanner sc1=new Scanner();
+        Scanner sc1=new Scanner(System.in);
         do
         {
-        obj.input();
-        obj.generatepattern();
-        System.out.println("Would you like to continue ?");
-        System.out.println("If yes press 1, and press any other number to exit");
-        choice1=sc.nextInt();
-    }while(choice1==1)
-}         /*	Write a program to generate the patterns till n terms based upon the user’s choice of triangle to be displayed.                                             
+          obj.input();
+          obj.generatepattern();
+          System.out.println("Would you like to continue ?");
+          System.out.println("If yes press 1, and press any other number to exit");
+          choice1=sc1.nextInt();
+          }while(choice1==1);
+       }
+    }
 
- 1                                                 a b c d e
- 1 2                                               a b c d
- 1 2 3                                             a b c
- 1 2 3 4                                           a b
- 1 2 3 4 5				                              a 	*/
+    /*5.	Write a program to generate the patterns till n terms based upon the user’s choice of triangle to be displayed.                                             
+
+ 1                                                 5  5  5  5  5
+ 1 2                                               5  5  5  5
+ 1 2 3                                             5  5  5
+ 1 2 3 4                                           5  5
+ 1 2 3 4 5				                              5	
+*/
